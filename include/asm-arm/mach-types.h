@@ -3260,6 +3260,7 @@ extern unsigned int __machine_arch_type;
 #define MACH_TYPE_MX6Q_SABRESD	       3980
 #define MACH_TYPE_MX6SL_ARM2           4091
 #define MACH_TYPE_MX6SL_EVK            4307
+#define MACH_TYPE_MX53_GZL             5555
 
 #ifdef CONFIG_ARCH_EBSA110
 # ifdef machine_arch_type
@@ -42151,6 +42152,18 @@ extern unsigned int __machine_arch_type;
 # define machine_is_mx53_loco()	(machine_arch_type == MACH_TYPE_MX53_LOCO)
 #else
 # define machine_is_mx53_loco()	(0)
+#endif
+
+#ifdef CONFIG_MACH_MX53_GZL
+# ifdef machine_arch_type
+#  undef machine_arch_type
+#  define machine_arch_type     __machine_arch_type
+# else
+#  define machine_arch_type     MACH_TYPE_MX53_GZL
+# endif
+# define machine_is_mx53_gzl() (machine_arch_type == MACH_TYPE_MX53_GZL)
+#else
+# define machine_is_mx53_gzl() (0)
 #endif
 
 #ifdef CONFIG_MACH_MX6Q_SABREAUTO

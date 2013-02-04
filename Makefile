@@ -3299,6 +3299,10 @@ mx53_ard_mfg_config		\
 mx53_ard_config		: unconfig
 	$(MKCONFIG) $(@:_config=) arm arm_cortexa8 mx53_ard freescale mx53
 
+mx53_gzl_mfg_config		\
+mx53_gzl_config         : unconfig
+	$(MKCONFIG) $(@:_config=) arm arm_cortexa8 mx53_gzl freescale mx53
+
 mx53_arm2_ddr3_config		\
 mx53_arm2_ddr3_android_config	\
 mx53_evk_android_config		\
